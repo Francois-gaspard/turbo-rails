@@ -1,0 +1,12 @@
+<div class="property">
+  <%= link_to property.name, property_path(property) %>
+  <div class="property__actions">
+    <%= button_to "Delete",
+                  property_path(property),
+                  method: :delete,
+                  class: "btn btn--light" %>
+    <%= link_to "Edit",
+                edit_property_path(property),
+                class: "btn btn--light" %>
+  </div>
+</div>

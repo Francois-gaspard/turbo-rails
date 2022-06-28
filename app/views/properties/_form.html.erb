@@ -1,0 +1,10 @@
+<%= simple_form_for property, html: { class: "property form" } do |f| %>
+  <% if property.errors.any? %>
+    <div class="error-message">
+      <%= property.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
+
+  <%= f.input :name, input_html: { autofocus: true } %>
+  <%= f.submit class: "btn btn--secondary" %>
+<% end %>

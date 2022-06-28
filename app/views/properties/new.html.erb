@@ -1,0 +1,9 @@
+<main class="container">
+  <%= link_to sanitize("&larr; Back to properties"), properties_path %>
+
+  <div class="header">
+    <h1>New property</h1>
+  </div>
+
+  <%= render "form", property: @property %>
+</main>
