@@ -51,3 +51,5 @@ By default, asset tags have the `"data-turbo-track": "reload"` attribute:
 ```
 This tells Turbo to compare the cached assets fingerprint to the server's.
 If a change is detected, the whole page is refreshed.
+
+Next: [Single-page form](docs/single_page_form.md)

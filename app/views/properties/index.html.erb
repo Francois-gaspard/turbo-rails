@@ -1,13 +1,10 @@
 <main class="container">
-  <div class="header">
-    <h1>Properties</h1>
-    <%= link_to "New property",
-                new_property_path,
-                class: "btn btn--primary" %>
-    <%= link_to "Index",
-                properties_path,
-                class: "btn btn--primary" %>
-  </div>
+  <%= turbo_frame_tag "first_turbo_frame" do %>
+    <div class="header">
+      <h1>Properties</h1>
+      <%= link_to "New Property", new_property_path, class: "btn btn--primary" %>
+    </div>
+  <% end %>
 
   <%= render @properties %>
 </main>
