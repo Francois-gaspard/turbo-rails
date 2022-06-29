@@ -1,10 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-first:
-  name: First property
-
-second:
-  name: Second property
-
-third:
-  name: Third property
+<% 1.upto(100) do |i| %>
+property_<%= i %>:
+  name: Property <%= i %>
+<% end %>
