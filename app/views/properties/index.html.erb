@@ -10,6 +10,15 @@
   <% end %>
 <%= turbo_frame_tag Property.new %>
   <%= turbo_frame_tag 'properties' do %>
-    <%= render @properties %>
+    <%= turbo_frame_tag "page_#{@pagy.page}" do %>
+      <%= render @properties %>
+      <% if @pagy.next %>
+        <%= turbo_frame_tag "page_#{@pagy.next}",
+                            loading: :lazy,
+                            src: pagy_url_for(@pagy, @pagy.next) %>
+      <% else %>
+        No more properties
+      <% end %>
+    <% end %>
   <% end %>
 </main>

@@ -30,7 +30,10 @@ class PropertiesController < ApplicationController
 
   def update
     if @property.update(property_params)
-      redirect_to properties_path, notice: "Property was successfully updated."
+      respond_to do |format|
+        format.html { redirect_to properties_path, notice: "Property was successfully updated." }
+        format.turbo_stream
+      end
     else
       render :edit, status: :unprocessable_entity
     end
