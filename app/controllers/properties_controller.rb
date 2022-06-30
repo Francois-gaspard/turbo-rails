@@ -2,7 +2,7 @@ class PropertiesController < ApplicationController
   before_action :set_property, only: [:show, :edit, :update, :destroy]
 
   def index
-    @properties = Property.all
+    @pagy, @properties = pagy(Property.order(id: :asc), items: 5)
   end
 
   def show
