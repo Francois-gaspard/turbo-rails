@@ -16,7 +16,10 @@ class PropertiesController < ApplicationController
     @property = Property.new(property_params)
 
     if @property.save
-      redirect_to properties_path, notice: "Property was successfully created."
+      respond_to do |format|
+        format.html { redirect_to properties_path, notice: "Property was successfully created." }
+        format.turbo_stream
+      end
     else
       render :new, status: :unprocessable_entity
     end
@@ -35,7 +38,11 @@ class PropertiesController < ApplicationController
 
   def destroy
     @property.destroy
-    redirect_to properties_path, notice: "Property was successfully destroyed."
+    respond_to do |format|
+      format.html { redirect_to properties_path,
+                                notice: "Property was successfully destroyed." }
+      format.turbo_stream
+    end
   end
 
   private

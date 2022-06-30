@@ -1,0 +1,2 @@
+<%= turbo_stream.prepend "properties", partial: "properties/property", locals: { property: @property } %>
+<%= turbo_stream.update Property.new, "" %>

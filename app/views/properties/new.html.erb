@@ -4,6 +4,7 @@
   <div class="header">
     <h1>New property</h1>
   </div>
-
-  <%= render "form", property: @property %>
+  <%= turbo_frame_tag @property do %>
+    <%= render "form", property: @property %>
+  <% end %>
 </main>
